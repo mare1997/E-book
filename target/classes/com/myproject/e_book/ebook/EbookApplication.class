@@ -1,0 +1,23 @@
+
+INSERT INTO users(firstname,lastname,username,user_pasword,category_id)VALUES('Marko','Radojkovic','admin','$2a$04$bAsNVI05EjajIzH4AHFdu.RimWMl2K5hmnzeBrcqRX7Cm8BtMgIFK',1);
+INSERT INTO users(firstname,lastname,username,user_pasword,category_id)VALUES('Nikola','Nikolic','user1','$2a$04$bAsNVI05EjajIzH4AHFdu.RimWMl2K5hmnzeBrcqRX7Cm8BtMgIFK',2);
+INSERT INTO users(firstname,lastname,username,user_pasword,category_id)VALUES('Milos','Milosevic','user2','$2a$04$bAsNVI05EjajIzH4AHFdu.RimWMl2K5hmnzeBrcqRX7Cm8BtMgIFK',3);
+INSERT INTO authority(name)VALUES('ADMIN')
+INSERT INTO authority(name)VALUES('USER')
+
+INSERT INTO user_authority(user_id,authority_id)VALUES(1,1)
+INSERT INTO user_authority(user_id,authority_id)VALUES(2,2)
+INSERT INTO user_authority(user_id,authority_id)VALUES(3,2)
+
+INSERT INTO categories(name) VALUES('NONE');
+INSERT INTO categories(name) VALUES('Horor');
+INSERT INTO categories(name) VALUES('Komedija');
+INSERT INTO categories(name) VALUES('Akcija');
+INSERT INTO languages(name) VALUES('engleski');
+INSERT INTO languages(name) VALUES('srpski');
+INSERT INTO languages(name) VALUES('nemacki');
+INSERT INTO ebooks(title,keywords,publication_year,filename,mime,author,user_id,category_id,language_id) VALUES('Knjiga1','1',2010,'knjiga1.pdf','text','Mare',1,2,2);
+INSERT INTO ebooks(title,keywords,publication_year,filename,mime,author,user_id,category_id,language_id) VALUES('Knjiga2','2',2011,'knjiga2.pdf','text','Dare',2,3,1);
+INSERT INTO ebooks(title,keywords,publication_year,filename,mime,author,user_id,category_id,language_id) VALUES('Knjiga3','3',2012,'knjiga3.pdf','text','Zare',3,4,3);
+INSERT INTO ebooks(title,keywords,publication_year,filename,mime,author,user_id,category_id,language_id) VALUES('Knjiga4','4',2013,'knjiga4.pdf','text','Jare',1,2,1);
+

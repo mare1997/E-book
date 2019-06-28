@@ -1,0 +1,14 @@
+body{
+	margin-top: 5%;
+}
+
+#myTable{
+	margin-left: 5%;
+}
+td,th{
+	padding: 75px;
+	
+}
+.table-bordered {
+   width: auto !important;
+}

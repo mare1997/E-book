@@ -1,0 +1,14 @@
+body{
+	margin-top: 5%;
+}
+
+#myTableCategory{
+	margin: 5%;
+}
+td,th{
+	padding: 50px;
+	
+}
+.table-bordered {
+   width: auto !important;
+}

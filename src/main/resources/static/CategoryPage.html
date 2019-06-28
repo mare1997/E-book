@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>EBookRepository Project {Admin}</title>
+	<script src="js/jquery-2.1.4.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css"/>
+	<link rel="stylesheet" type="text/css" href="css/admin.css"/>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/admin.js" type="text/javascript"></script>
+    <script src="js/login.js" type="text/javascript"></script>
+</head>
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top" style="background-color: #10cf00;">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="EbookPage.html">EBookRepository Project</a>
+			</div>
+				<div class="collapse navbar-collapse" id="mMenu">
+					<ul class="nav navbar-nav navbar-right" id="navBarLogIn">
+						<li><label id="userRoleE"></label></li>
+						<li><a target="_self" data-toggle="modal" href="#editUser" onclick="eu()"> Edit profile</a></li>
+						<li><a target="_self" data-toggle="modal" href="#changePassword" onclick="cp()"> Change password</a></li>
+						<li><a target="_self" data-toggle="modal" onclick="logout()"> Logout</a></li>
+                    </ul>
+					<ul class="nav navbar-nav navbar-right" id="navBarNotLogIn">
+                       	<li>
+                        	<a  data-toggle="modal" href="" ></span> Login</a>
+                        </li>
+                    </ul>
+				</div>
+			</div>
+	</nav>
+	<div class="modal fade" id="editUserByAdmin">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <!-- header -->
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h3 class="modal-title">Edit user by Admin</h3>
+                    </div>
+                    <div class="modal-header">
+                        <div class="form-group">
+                            <ul>
+                            	<li><label>First name*:</label><input type="text" name="fname" id="fnameEditUserByAdmin" class="form-control"  required/></li>
+                            	<li><label>Last name*:</label><input type="text" name="lname" id="lnameEditUserByAdmin" class="form-control"  required/></li>
+                                <li><label>Password*:</label><input type="text" name="password" id="passwordEditUserByAdmin" class="form-control"  required/></li>
+                                
+                                <li>
+                                	<label for="roleSelectEdit">User role: </label>
+                                    <select id="roleSelectEdit" >
+                                    	<option value="USER">User</option>
+                                        <option value="ADMIN">Admin</option>
+                                    </select>  
+                                </li>
+                                <li>
+                                	<label for="categorySelectEDIT">Category:</label>
+                                	<select id="categorySelectEDIT">
+                                		
+                                	</select>
+                                </li>
+                            </ul>
+                            
+                       </div>
+                    </div>
+                    <!-- footer -->
+                    <div class="modal-footer">
+                        <button class="btn btn-danger btn-block"  onclick="editUserByAdmin()">Submit</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+     <div class="modal fade" id="editUser">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <!-- header -->
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h3 class="modal-title">Edit user</h3>
+                    </div>
+                    <div class="modal-header">
+                        <div class="form-group">
+                            <ul>
+                            	<li><label>First name*:</label><input type="text" name="fname" id="fnameEditUser" class="form-control"  required/></li>
+                            	<li><label>Last name*:</label><input type="text" name="lname" id="lnameEditUser" class="form-control"  required/></li>
+                            </ul>
+                       </div>
+                    </div>
+                    <!-- footer -->
+                    <div class="modal-footer">
+                        <button class="btn btn-danger btn-block"  onclick="editUser()">Submit</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <div class="modal fade" id="changePassword">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <!-- header -->
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h3 class="modal-title">Change password</h3>
+                    </div>
+                    <div class="modal-header">
+                        <div class="form-group">
+                            <ul>
+                            	<li><label>Old password*:</label><input type="text" name="passworOP" id="passworOP" class="form-control"  required/></li>
+                            	<li><label>Password*:</label><input type="text" name="password" id="passwordP" class="form-control"  required/></li>
+                            	<li><label>Confrim Password*:</label><input type="text" name="cpassword" id="cpasswordCP" class="form-control"  required/></li>
+                                
+                            </ul>
+                            
+                       </div>
+                    </div>
+                    <!-- footer -->
+                    <div class="modal-footer">
+                        <button class="btn btn-danger btn-block"  onclick="changePassword()">Submit</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>    
+     <div class="modal fade" id="AddNewUserByAdmin">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <!-- header -->
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h3 class="modal-title">Add new user by Admin</h3>
+                    </div>
+                    <div class="modal-header">
+                        <div class="form-group">
+                            <ul>
+                                <li><label>Username*:</label><input type="text" name="username" id="usernameAddNewUserByAdmin" class="form-control"  required/></li>
+                                <li><label>Password*:</label><input type="text" name="password" id="passwordAddNewUserByAdmin" class="form-control"  required/></li>
+                                <li><label>First name*:</label><input type="text" name="fname" id="fnameAddUserByAdmin" class="form-control"  required/></li>
+                            	<li><label>Last name*:</label><input type="text" name="lname" id="lnameAddUserByAdmin" class="form-control"  required/></li>
+                                <li>
+                                	<label for="roleSelectAdd">User role: </label>
+                                    <select id="roleSelectAdd" >
+                                        <option value="USER">User</option>
+                                        <option value="ADMIN">Admin</option>
+                                    </select>  
+                                </li>
+                                <li>
+                                	<label for="categorySelect">Category:</label>
+                                	<select id="categorySelectADD">
+                                		
+                                	</select>
+                                </li>
+                            </ul>
+                            
+                       </div>
+                    </div>
+                    <!-- footer -->
+                    <div class="modal-footer">
+                        <button class="btn btn-danger btn-block"  onclick="addNewuserbyAdmin()">Submit</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>   
+
+    <div class="modal" id="deleteUserModal" role="dialog" >
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Are you sure?</h5>
+                    </div>
+                    <div class="modal-body" id="deleteBody">Select "Delete" below if you are want to delete this user.</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal" id="cancel">Cancel</button>
+                        <a class="btn btn-danger" id="deleteBtn" onclick="deleteUser()">Delete</a>
+                    </div>
+                </div>
+            </div>
+        </div>    
+	<div class="main">
+    	<table id="myTableAdmin" class="table table-bordered"></table>
+	</div>
+
+
+</body>
+
+</html>
